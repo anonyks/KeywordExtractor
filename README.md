@@ -1,41 +1,77 @@
 # KeywordExtractor
 
-KeywordExtractor is a Python utility designed to help users manage large text files by extracting or removing lines that contain specified keywords. This tool can be particularly useful for data cleaning, log analysis, and content filtering.
+The KeywordExtractor toolkit comprises a Python script and two Batch scripts designed for versatile keyword-based text processing tasks. It allows for efficient extraction or removal of lines from text files based on user-specified keywords. This utility is ideal for handling large volumes of text in automated or semi-automated environments.
 
-## Features
+---
 
-- **Extract Mode**: Pull lines that contain any of the specified keywords from a text file.
-- **Remove Mode**: Eliminate lines that contain any of the specified keywords, preserving the rest.
+## Files in this Repository
 
-## Installation
+### 1. **KeywordExtractor.py**
 
-```bash
-# Clone the repository
-git clone https://github.com/anonyks/KeywordExtractor.git
+**Description**:  
+A Python script that processes text files to either extract or remove lines containing specified keywords.
 
-# Navigate into the repository
-cd KeywordExtractor
-```
+**Usage**:
+1. Ensure a `words.txt` file exists in the same directory with keywords listed one per line.
+2. Run the script and follow the prompts to input the file path and choose the mode ('extract' or 'remove'):
+   ```bash
+   python KeywordExtractor.py
+   ```
+3. Outputs are saved in `output.txt`.
 
-## Usage
+---
 
-To use this script:
+### 2. **ext[Bulk].bat**
 
-1. Prepare a text file named `words.txt` in the script's directory with your keywords, one per line.
-2. Run the script and follow the prompts to provide the path to your input file and choose your mode ('extract' or 'remove').
+**Description**:  
+A Batch script that searches for and extracts lines containing a user-specified keyword across all `.txt` files in a directory and its subdirectories, outputting the results into a text file named after the keyword.
 
-### Example
+**Usage**:
+1. Place the script in the directory containing the `.txt` files.
+2. Execute the script and enter keyword (less than 500 with space & not begining with /) when prompted:
+   ```bash
+   ext[Bulk].bat
+   ```
+3. Find extracted lines in a file named `list.txt`.
 
-```bash
-python KeywordExtractor.py
-```
+---
 
-Follow the prompts to enter the path to your input file and specify the mode of operation.
+### 3. **ext[KeyWord].bat**
 
-## Contributing
+**Description**:  
+A Batch script that filters `.txt` files in the current directory to find and compile lines containing a specified keyword into a file named `list.txt`.
 
-Contributions are welcome! Please open an issue to discuss what you would like to change or submit a pull request.
+**Usage**:
+1. Run the script in the directory with the `.txt` files:
+   ```bash
+   ext[KeyWord].bat
+   ```
+2. Input single keyword (not begining with /) when prompted.
+3. Access the compiled results in `<keyword>.txt`.
 
-## Contact
+---
 
-For questions or collaboration requests, please reach out: TG: @AnonyKs_xD
+## Requirements
+
+- Python 3.x for running `KeywordExtractor.py`.
+- Windows environment for executing Batch files (`ext[Bulk].bat` and `ext[KeyWord].bat`).
+
+---
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/anonyks/KeywordExtractor.git
+   ```
+2. Navigate into the repository directory:
+   ```bash
+   cd KeywordExtractor
+   ```
+3. Follow the usage instructions above for each script based on your needs.
+
+---
+
+
+**Contact**:  
+For support or inquiries, reach out via [Telegram](https://t.me/AnonyKs_xD).
